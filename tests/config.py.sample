@@ -1,3 +1,4 @@
 GWC_REST_API_URL = 'http://localhost:8080/geoserver/gwc/rest'
 GWC_REST_API_USERNAME = 'admin'
 GWC_REST_API_PASSWORD = 'geoserver'
+LAYER_NAME = 'tyger'
