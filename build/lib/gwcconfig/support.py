@@ -141,13 +141,13 @@ def write_gridSubsets(name):
                     builder.data(coord)
                     builder.end("double")
                 builder.end("coords")
-                build.end("extent")
+                builder.end("extent")
             if gs.zoomStart is not None:
                 builder.start("zoomStart", dict())
                 builder.data(gs.zoomStart)
                 builder.end("zoomStart")
             if gs.zoomStop is not None:
-                build.start("zoomStop", dict())
+                builder.start("zoomStop", dict())
                 builder.data(gs.zoomStop)
                 builder.end("zoomStop")
             builder.end("gridSubset")
