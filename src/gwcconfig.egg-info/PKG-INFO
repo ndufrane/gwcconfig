@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: gwcconfig
+Version: 0.0.1
+Summary: Geoserver GeoWebCache REST Configuration
+Home-page: http://github.com/ndufrane/gwcconfig
+Author: Nicolas Dufrane
+Author-email: nicolas.dufrane@gmail.com
+License: MIT
+Description: gwcconfig
+        ========
+        
+        gwcconfig is a python library for manipulating a GeoWebcache instance via the GeoWebcache RESTConfig API.
+        
+        The project is distributed under a `MIT License <LICENSE.txt>`_ .
+        
+        This project is very largely inspired from gsconfig (https://github.com/boundlessgeo/gsconfig)
+        
+Keywords: GeoServer GeoWebCache REST Configuration
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: GIS

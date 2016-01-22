@@ -1,0 +1,12 @@
+README.rst
+setup.py
+src/gwcconfig/GeoServerLayer.py
+src/gwcconfig/GeoWebCacheLayer.py
+src/gwcconfig/GeoWebCacheServer.py
+src/gwcconfig/__init__.py
+src/gwcconfig/support.py
+src/gwcconfig.egg-info/PKG-INFO
+src/gwcconfig.egg-info/SOURCES.txt
+src/gwcconfig.egg-info/dependency_links.txt
+src/gwcconfig.egg-info/requires.txt
+src/gwcconfig.egg-info/top_level.txt
