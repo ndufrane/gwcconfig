@@ -1,5 +1,10 @@
+#!/usr/bin/python
+# -*- coding: utf8 -*-
 
-from gwcconfig.support import xml_property, url, ResourceInfo, write_string, string_list, write_string_list, write_numeric, write_int_list, int_list, write_bool, build_gridSubsets, write_gridSubsets, write_parameterFilters, build_parameterFilters
+
+from gwcconfig.support import xml_property, url, write_string, string_list, write_string_list, write_numeric, write_int_list, int_list, write_bool, build_gridSubsets, write_gridSubsets, write_parameterFilters, build_parameterFilters
+
+from gwcconfig.ResourceInfo import ResourceInfo
 
 def geoserverLayer_from_index(server, node):
     name = node.find("name")
