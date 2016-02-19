@@ -3,7 +3,7 @@
 
 import httplib2
 import logging
-
+import time
 from datetime import datetime, timedelta
 from urlparse import urlparse
 
@@ -16,7 +16,7 @@ logger = logging.getLogger("gwcconfig.server")
 
 class FailedRequestError(Exception):
     pass
-    
+
 class GeoWebCacheServer(object):
     """Base GeoWebCache server
         Sample service_url http://localhost:8080/geoserver/gwc/rest
@@ -68,12 +68,18 @@ class GeoWebCacheServer(object):
             raw_text = cached_response[1]
             return parse_or_raise(raw_text)
         else:
-            response, content = self.http.request(rest_url)
-            if response.status == 200:
-                self._cache[rest_url] = (datetime.now(), content)
-                return parse_or_raise(content)
-            else:
-                raise FailedRequestError("Tried to make a GET request to %s but got a %d status code: \n%s" % (rest_url, response.status, content))
+            cpt = 0
+            while cpt < 3:
+                response, content = self.http.request(rest_url)
+                if response.status == 200:
+                    self._cache[rest_url] = (datetime.now(), content)
+                    return parse_or_raise(content)
+                else:
+                    cpt = cpt + 1
+                    time.sleep(1)
+                    print("Tried to make a GET request to %s but got a %d status code: \n%s" % (rest_url, response.status, content))
+            if cpt > 2:
+                raise FailedRequestError("Tried to make a GET 3 Times request to %s but got a %d status code: \n%s" % (rest_url, response.status, content))
 
     def update(self, obj):
         return self.save(obj,update=True)
